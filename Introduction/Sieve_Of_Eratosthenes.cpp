@@ -1,12 +1,12 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-void sieve(int n){
+int sieve(int n){
     vector<bool> isPrime(n+1, true);
     for(int i = 2; i*i <= n; i++){
         if(isPrime[i]){
             for(int j = 2*i; j <= n; j = j + i){
-                isPrime[i] = false;
+                isPrime[j] = false;
             }
         }
     }
@@ -14,7 +14,9 @@ void sieve(int n){
         if(isPrime[i])
         cout << i << " " <<endl;
     }
+    return 0;
 }
-void main(){
+int main(){
     sieve(55);
+    return 0;
 }
