@@ -1,25 +1,25 @@
-// Online C++ compiler to run C++ program online
 #include <iostream>
 #include <vector>
 using namespace std;
-int deleteElement(vector<int>&a,int position){
-    for(int i = position; i<a.size() - 1;i++){
-        a[i] = a[i+1];
+int removeDuplicates(vector<int>& nums) {
+        vector<int>a;
+         a.push_back(nums[0]);
+        int k=0;
+        for(int i = 0; i<nums.size();i++){
+            if(a[k]!=nums[i]){
+                a.push_back(nums[i]);
+                ++k;
+            }
+        }
+        cout << k+1 << endl;
+        for(int i =0; i<nums.size();i++){
+            cout << a[i] << " ";
+        }
+        return 0;
     }
-    return 0;
-}
 
 int main() {
-    vector<int>arr{10,20,20,30,30,30,30,40,50,50};
-    int n = arr.size();
-    for(int i = 0; i<n-1;i++){
-        if(arr[i]==arr[i+1]){
-            deleteElement(arr, i+1);
-            --n;
-        }
-    }
-    for(int i = 0; i < n; i++){
-        cout << arr[i] << " ";
-    }
+    vector<int>arr{10,20,20,30,30,30,30,40,50,50,60,60,70,80};
+    removeDuplicates(arr);
     return 0;
 }
