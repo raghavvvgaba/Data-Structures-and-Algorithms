@@ -1,6 +1,6 @@
 package Searching;
 
-public class b01BinarySearch {
+public class b00BinarySearch {
     static int search(int arr[], int x) {
         int n = arr.length;
         int low = 0, high = n - 1;
